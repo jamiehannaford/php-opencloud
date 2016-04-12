@@ -7,8 +7,6 @@ $rackspace = new Rackspace\Rackspace([
     'apiKey'   => '{apiKey}',
 ]);
 
-$service = $rackspace->networkV2(['region' => '{region}']);
-
-$port = $service->createPort([
-
-]);
+$rackspace->networkingV2(['region' => '{region}'])
+    ->getSubnet('{subnetId}')
+    ->delete();

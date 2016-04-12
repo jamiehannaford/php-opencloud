@@ -7,7 +7,7 @@ $rackspace = new Rackspace\Rackspace([
     'apiKey'   => '{apiKey}',
 ]);
 
-$service = $rackspace->networkV2(['region' => '{region}']);
+$floatingIp = $rackspace->networkingV2ExtLayer3()->getFloatingIp('{id}');
 
-$port = $service->getPort('{id}');
-$port->delete();
+$floatingIp->portId = '{newPortId}';
+$floatingIp->update();

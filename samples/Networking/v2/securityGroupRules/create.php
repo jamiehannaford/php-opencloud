@@ -7,7 +7,8 @@ $rackspace = new Rackspace\Rackspace([
     'apiKey'   => '{apiKey}',
 ]);
 
-$service = $rackspace->networkV2(['region' => '{region}']);
+$service = $rackspace->networkingV2(['region' => '{region}']);
 
-$network = $service->getNetwork('{id}');
-$network->delete();
+$securityGroupRule = $service->createSecurityGroupRule([
+
+]);

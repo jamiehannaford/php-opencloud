@@ -7,7 +7,6 @@ $rackspace = new Rackspace\Rackspace([
     'apiKey'   => '{apiKey}',
 ]);
 
-$service = $rackspace->networkV2(['region' => '{region}']);
-
-$securityGroup = $service->getSecurityGroup('{id}');
-$securityGroup->delete();
+$rackspace->networkingV2ExtLayer3()
+          ->getFloatingIp('{id}')
+          ->delete();

@@ -3,7 +3,7 @@
 namespace Rackspace\Test\Network\v1\Models;
 
 use OpenCloud\Test\TestCase;
-use Rackspace\Network\v2\Api;
+use Rackspace\Orchestration\v1\Api;
 use Rackspace\Orchestration\v1\Models\Stack;
 
 class StackTest extends TestCase

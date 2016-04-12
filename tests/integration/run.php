@@ -6,5 +6,5 @@ require_once $rootDir . '/vendor/autoload.php';
 
 $basePath = $rootDir . '/samples';
 
-$runner = new \Rackspace\Integration\Runner($basePath);
+$runner = new \Rackspace\Integration\Runner($basePath, 'Rackspace\\Integration');
 $runner->runServices();

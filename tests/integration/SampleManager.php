@@ -2,8 +2,20 @@
 
 namespace Rackspace\Integration;
 
-class SampleManager extends \OpenStack\Integration\SampleManager
+use OpenCloud\Integration\SampleManagerInterface;
+
+class SampleManager implements SampleManagerInterface
 {
+    protected $basePath;
+    protected $paths = [];
+    protected $verbosity;
+
+    public function __construct($basePath, $verbosity)
+    {
+        $this->basePath = $basePath;
+        $this->verbosity = $verbosity;
+    }
+    
     protected function getGlobalReplacements()
     {
         return [
@@ -11,6 +23,20 @@ class SampleManager extends \OpenStack\Integration\SampleManager
             '{apiKey}'   => getenv('RS_API_KEY'),
             '{region}'   => getenv('RS_REGION'),
         ];
+    }
+
+    public function deletePaths()
+    {
+        if (!empty($this->paths)) {
+            foreach ($this->paths as $path) {
+                unlink($path);
+            }
+        }
+    }
+
+    public function getConnectionStr()
+    {
+        return str_replace('$rackspace =', 'return', $this->getConnectionTemplate());
     }
 
     protected function getConnectionTemplate()

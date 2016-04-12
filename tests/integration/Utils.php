@@ -6,8 +6,13 @@ use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use Rackspace\Rackspace;
 
-class Utils extends \OpenStack\Integration\Utils
+class Utils extends \OpenCloud\Integration\Utils
 {
+    public static function getRackspace(): Rackspace
+    {
+        return new Rackspace(self::getAuthOpts());
+    }
+
     public static function getAuthOpts(array $options = [])
     {
         return array_merge($options, [

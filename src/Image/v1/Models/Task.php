@@ -2,7 +2,7 @@
 
 namespace Rackspace\Image\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Listable;
 use OpenCloud\Common\Resource\Retrievable;
 
@@ -11,7 +11,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\Image\v1\Api $api
  */
-class Task extends AbstractResource implements Listable, Retrievable
+class Task extends OperatorResource implements Listable, Retrievable
 {
     /**
      * @var string

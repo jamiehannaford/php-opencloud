@@ -2,7 +2,7 @@
 
 namespace Rackspace\DNS\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Listable;
@@ -14,7 +14,7 @@ use OpenCloud\Common\Resource\Updateable;
  *
  * @property \Rackspace\DNS\v1\Api $api
  */
-class Record extends AbstractResource implements Creatable, Updateable, Listable, Deletable, Retrievable
+class Record extends OperatorResource implements Creatable, Updateable, Listable, Deletable, Retrievable
 {
     /**
      * @var string

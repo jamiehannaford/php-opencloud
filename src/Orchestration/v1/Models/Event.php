@@ -2,7 +2,7 @@
 
 namespace Rackspace\Orchestration\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Listable;
 use OpenCloud\Common\Resource\Retrievable;
 
@@ -11,7 +11,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\Network\v2\Api $api
  */
-class Event extends AbstractResource implements Listable, Retrievable
+class Event extends OperatorResource implements Listable, Retrievable
 {
     /**
      * @var string

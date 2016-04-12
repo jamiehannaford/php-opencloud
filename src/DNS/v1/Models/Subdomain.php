@@ -2,7 +2,7 @@
 
 namespace Rackspace\DNS\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Listable;
 
 /**
@@ -10,7 +10,7 @@ use OpenCloud\Common\Resource\Listable;
  *
  * @property \Rackspace\DNS\v1\Api $api
  */
-class Subdomain extends AbstractResource implements Listable
+class Subdomain extends OperatorResource implements Listable
 {
     /**
      * @var string

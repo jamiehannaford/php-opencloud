@@ -2,8 +2,8 @@
 
 namespace Rackspace\DNS\v1;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 
-class Service extends AbstractResource
+class Service extends OperatorResource
 {
 }

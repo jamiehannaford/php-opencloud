@@ -2,7 +2,7 @@
 
 namespace Rackspace\LoadBalancer\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Retrievable;
 use OpenCloud\Common\Resource\Updateable;
@@ -12,7 +12,7 @@ use OpenCloud\Common\Resource\Updateable;
  *
  * @property \Rackspace\LoadBalancer\v1\Api $api
  */
-class SslTerminationConfig extends AbstractResource implements Updateable, Deletable, Retrievable
+class SslTerminationConfig extends OperatorResource implements Updateable, Deletable, Retrievable
 {
     /**
      * @var string

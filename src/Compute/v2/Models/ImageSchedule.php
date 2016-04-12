@@ -2,12 +2,12 @@
 
 namespace Rackspace\Compute\v2\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 
 /**
  * Represents an backup schedule for a parent server.
  */
-class ImageSchedule extends AbstractResource
+class ImageSchedule extends OperatorResource
 {
     const MONDAY = 'MONDAY';
     const TUESDAY = 'TUESDAY';

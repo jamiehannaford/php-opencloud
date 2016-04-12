@@ -2,10 +2,10 @@
 
 namespace Rackspace\ObjectStoreCDN\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Deletable;
 
-class Object extends AbstractResource implements Deletable
+class Object extends OperatorResource implements Deletable
 {
     /** @var string */
     public $containerName;

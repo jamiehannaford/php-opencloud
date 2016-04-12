@@ -2,7 +2,7 @@
 
 namespace Rackspace\CDN\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 
@@ -11,7 +11,7 @@ use OpenCloud\Common\Resource\Deletable;
  *
  * @property \Rackspace\CDN\v1\Api $api
  */
-class SslCertificate extends AbstractResource implements Creatable, Deletable
+class SslCertificate extends OperatorResource implements Creatable, Deletable
 {
     /**
      * {@inheritDoc}

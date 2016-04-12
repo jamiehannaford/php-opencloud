@@ -5,7 +5,7 @@ namespace Rackspace\ObjectStoreCDN\v1\Models;
 use function GuzzleHttp\Psr7\uri_for;
 
 use OpenCloud\Common\HydratorStrategyTrait;
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Listable;
 use OpenCloud\Common\Resource\Retrievable;
 use OpenStack\ObjectStore\v1\Models\MetadataTrait;
@@ -14,7 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * @property \Rackspace\ObjectStoreCDN\v1\Api $api
  */
-class Container extends AbstractResource implements Listable, Retrievable
+class Container extends OperatorResource implements Listable, Retrievable
 {
     use MetadataTrait, HydratorStrategyTrait;
 

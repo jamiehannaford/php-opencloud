@@ -2,7 +2,7 @@
 
 namespace Rackspace\Compute\v2\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Listable;
@@ -13,7 +13,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\Compute\v2\Api $api
  */
-class Network extends AbstractResource implements Creatable, Listable, Deletable, Retrievable
+class Network extends OperatorResource implements Creatable, Listable, Deletable, Retrievable
 {
     /**
      * @var string

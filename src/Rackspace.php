@@ -40,13 +40,32 @@ class Rackspace
     public function objectStoreV1(array $options = []): \Rackspace\ObjectStore\v1\Service
     {
         $defaults = ['catalogName' => 'cloudFiles', 'catalogType' => 'object-store'];
-        return $this->builder->createService('ObjectStore', 1, array_merge($defaults, $options));
+        return $this->builder->createService('ObjectStore\\v1', array_merge($defaults, $options));
     }
 
     public function objectStoreCdnV1(array $options = []): \Rackspace\ObjectStoreCDN\v1\Service
     {
         $defaults = ['catalogName' => 'cloudFilesCDN', 'catalogType' => 'rax:object-cdn'];
-        return $this->builder->createService('ObjectStoreCDN', 1, array_merge($defaults, $options));
+        return $this->builder->createService('ObjectStoreCDN\\v1', array_merge($defaults, $options));
+    }
+
+    public function networkingV2(array $options = []): \Rackspace\Networking\v2\Service
+    {
+        $defaults = ['catalogName' => 'cloudNetworks', 'catalogType' => 'network'];
+        return $this->builder->createService('Networking\\v2', array_merge($defaults, $options));
+    }
+
+    /**
+     * Creates a new Networking v2 Layer 3 service.
+     *
+     * @param array $options Options that will be used in configuring the service.
+     *
+     * @return \Rackspace\Networking\v2\Extensions\Layer3\Service
+     */
+    public function networkingV2ExtLayer3(array $options = []): \Rackspace\Networking\v2\Extensions\Layer3\Service
+    {
+        $defaults = ['catalogName' => 'cloudNetworks', 'catalogType' => 'network'];
+        return $this->builder->createService('Networking\\v2\\Extensions\\Layer3', array_merge($defaults, $options));
     }
 
     /**
@@ -57,6 +76,6 @@ class Rackspace
     public function computeV2(array $options = []): \Rackspace\Compute\v2\Service
     {
         $defaults = ['catalogName' => 'cloudServersOpenStack', 'catalogType' => 'compute'];
-        return $this->builder->createService('Compute', 2, array_merge($defaults, $options));
+        return $this->builder->createService('Compute\\v2', array_merge($defaults, $options));
     }
 }

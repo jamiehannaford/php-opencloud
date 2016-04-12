@@ -2,7 +2,7 @@
 
 namespace Rackspace\RackConnect\v3\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Listable;
@@ -13,7 +13,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\RackConnect\v3\Api $api
  */
-class PublicIp extends AbstractResource implements Creatable, Listable, Deletable, Retrievable
+class PublicIp extends OperatorResource implements Creatable, Listable, Deletable, Retrievable
 {
     /**
      * @var string

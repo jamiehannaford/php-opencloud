@@ -2,7 +2,7 @@
 
 namespace Rackspace\Database\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Listable;
@@ -12,7 +12,7 @@ use OpenCloud\Common\Resource\Listable;
  *
  * @property \Rackspace\Database\v1\Api $api
  */
-class Database extends AbstractResource implements Creatable, Listable, Deletable
+class Database extends OperatorResource implements Creatable, Listable, Deletable
 {
     /**
      * @var string

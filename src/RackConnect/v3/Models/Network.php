@@ -2,7 +2,7 @@
 
 namespace Rackspace\RackConnect\v3\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Listable;
 use OpenCloud\Common\Resource\Retrievable;
 
@@ -11,7 +11,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\RackConnect\v3\Api $api
  */
-class Network extends AbstractResource implements Listable, Retrievable
+class Network extends OperatorResource implements Listable, Retrievable
 {
     /**
      * @var string

@@ -2,7 +2,7 @@
 
 namespace Rackspace\Compute\v2\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\HasMetadata;
@@ -19,7 +19,7 @@ use Rackspace\Database\v1\Models\ScheduledBackup;
  *
  * @property \Rackspace\Compute\v2\Api $api
  */
-class Server extends AbstractResource implements Creatable, Updateable, Listable, Deletable, Retrievable, HasMetadata
+class Server extends OperatorResource implements Creatable, Updateable, Listable, Deletable, Retrievable, HasMetadata
 {
     use HasWaiterTrait;
 

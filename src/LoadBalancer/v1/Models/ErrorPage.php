@@ -2,7 +2,7 @@
 
 namespace Rackspace\LoadBalancer\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Retrievable;
@@ -12,7 +12,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\LoadBalancer\v1\Api $api
  */
-class ErrorPage extends AbstractResource implements Creatable, Deletable, Retrievable
+class ErrorPage extends OperatorResource implements Creatable, Deletable, Retrievable
 {
     /**
      * @var string

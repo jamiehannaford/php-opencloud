@@ -2,7 +2,7 @@
 
 namespace Rackspace\LoadBalancer\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Retrievable;
 
 /**
@@ -10,7 +10,7 @@ use OpenCloud\Common\Resource\Retrievable;
  *
  * @property \Rackspace\LoadBalancer\v1\Api $api
  */
-class Statistics extends AbstractResource implements Retrievable
+class Statistics extends OperatorResource implements Retrievable
 {
     /**
      * @var integer

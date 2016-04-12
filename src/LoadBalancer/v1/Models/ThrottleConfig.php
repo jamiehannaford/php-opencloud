@@ -2,7 +2,7 @@
 
 namespace Rackspace\LoadBalancer\v1\Models;
 
-use OpenCloud\Common\Resource\AbstractResource;
+use OpenCloud\Common\Resource\OperatorResource;
 use OpenCloud\Common\Resource\Creatable;
 use OpenCloud\Common\Resource\Deletable;
 use OpenCloud\Common\Resource\Retrievable;
@@ -13,7 +13,7 @@ use OpenCloud\Common\Resource\Updateable;
  *
  * @property \Rackspace\LoadBalancer\v1\Api $api
  */
-class ThrottleConfig extends AbstractResource implements Creatable, Updateable, Deletable, Retrievable
+class ThrottleConfig extends OperatorResource implements Creatable, Updateable, Deletable, Retrievable
 {
     /**
      * @var integer

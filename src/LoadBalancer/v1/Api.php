@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Rackspace\LoadBalancer\v1;
 
@@ -37,7 +37,9 @@ class Api extends AbstractApi
         return [
             'method' => 'DELETE',
             'path'   => 'loadbalancers',
-            'params' => [],
+            'params' => [
+                'id' => $this->params->idsQuery(),
+            ],
         ];
     }
 
@@ -53,25 +55,11 @@ class Api extends AbstractApi
             'path'    => 'loadbalancers',
             'jsonKey' => 'loadBalancer',
             'params'  => [
-                'accessList'         => $this->params->accessListJson(),
-                'address'            => $this->params->addressJson(),
-                'algorithm'          => $this->params->algorithmJson(),
-                'condition'          => $this->params->conditionJson(),
-                'connectionLogging'  => $this->params->connectionLoggingJson(),
-                'connectionThrottle' => $this->params->connectionThrottleJson(),
-                'halfClosed'         => $this->params->halfClosedJson(),
-                'healthMonitor'      => $this->params->healthMonitorJson(),
-                'httpsRedirect'      => $this->params->httpsRedirectJson(),
-                'id'                 => $this->params->idJson(),
-                'metadata'           => $this->params->metadataJson(),
-                'name'               => $this->params->nameJson(),
-                'nodes'              => $this->params->nodesJson(),
-                'port'               => $this->params->portJson(),
-                'protocol'           => $this->params->protocolJson(),
-                'sessionPersistence' => $this->params->sessionPersistenceJson(),
-                'timeout'            => $this->params->timeoutJson(),
-                'type'               => $this->params->typeJson(),
-                'virtualIps'         => $this->params->virtualIpsJson(),
+                'name'       => $this->params->nameJson(),
+                'port'       => $this->params->portJson(),
+                'protocol'   => $this->params->protocolJson(),
+                'virtualIps' => $this->params->virtualIpsJson(),
+                'nodes'      => $this->params->nodesJson(),
             ],
         ];
     }
@@ -86,7 +74,7 @@ class Api extends AbstractApi
         return [
             'method' => 'GET',
             'path'   => 'loadbalancers/usage',
-            'params' => []
+            'params' => [],
         ];
     }
 
@@ -101,7 +89,7 @@ class Api extends AbstractApi
         return [
             'method' => 'GET',
             'path'   => 'loadbalancers/billable',
-            'params' => []
+            'params' => [],
         ];
     }
 
@@ -116,7 +104,7 @@ class Api extends AbstractApi
         return [
             'method' => 'GET',
             'path'   => 'loadbalancers/protocols',
-            'params' => []
+            'params' => [],
         ];
     }
 
@@ -131,7 +119,7 @@ class Api extends AbstractApi
         return [
             'method' => 'GET',
             'path'   => 'loadbalancers/algorithms',
-            'params' => []
+            'params' => [],
         ];
     }
 
@@ -146,7 +134,7 @@ class Api extends AbstractApi
         return [
             'method' => 'GET',
             'path'   => 'loadbalancers/alloweddomains',
-            'params' => []
+            'params' => [],
         ];
     }
 
@@ -156,14 +144,13 @@ class Api extends AbstractApi
      *
      * @return array
      */
-    public function getLoadBalancerId()
+    public function getLoadBalancer()
     {
         return [
             'method' => 'GET',
-            'path'   => 'loadbalancers/{loadBalancerId}',
+            'path'   => 'loadbalancers/{id}',
             'params' => [
-
-                'loadBalancerId' => $this->params->loadBalancerIdUrl(),
+                'id' => $this->params->loadBalancerIdUrl(),
             ],
         ];
     }
@@ -174,21 +161,21 @@ class Api extends AbstractApi
      *
      * @return array
      */
-    public function putLoadBalancerId()
+    public function putLoadBalancer()
     {
         return [
             'method'  => 'PUT',
-            'path'    => 'loadbalancers/{loadBalancerId}',
+            'path'    => 'loadbalancers/{id}',
             'jsonKey' => 'loadBalancer',
             'params'  => [
-                'loadBalancerId' => $this->params->loadBalancerIdUrl(),
-                'algorithm'      => $this->params->algorithmJson(),
-                'halfClosed'     => $this->params->halfClosedJson(),
-                'httpsRedirect'  => $this->params->httpsRedirectJson(),
-                'name'           => $this->params->nameJson(),
-                'port'           => $this->params->portJson(),
-                'protocol'       => $this->params->protocolJson(),
-                'timeout'        => $this->params->timeoutJson(),
+                'id'            => $this->params->loadBalancerIdUrl(),
+                'algorithm'     => $this->params->algorithmJson(),
+                'halfClosed'    => $this->params->halfClosedJson(),
+                'httpsRedirect' => $this->params->httpsRedirectJson(),
+                'name'          => $this->params->nameJson(),
+                'port'          => $this->params->portJson(),
+                'protocol'      => $this->params->protocolJson(),
+                'timeout'       => $this->params->timeoutJson(),
             ],
         ];
     }
@@ -199,13 +186,13 @@ class Api extends AbstractApi
      *
      * @return array
      */
-    public function deleteLoadBalancerId()
+    public function deleteLoadBalancer()
     {
         return [
             'method' => 'DELETE',
-            'path'   => 'loadbalancers/{loadBalancerId}',
+            'path'   => 'loadbalancers/{id}',
             'params' => [
-                'loadBalancerId' => $this->params->loadBalancerIdUrl(),
+                'id' => $this->params->loadBalancerIdUrl(),
             ],
         ];
     }

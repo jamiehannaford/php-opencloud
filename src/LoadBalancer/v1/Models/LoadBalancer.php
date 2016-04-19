@@ -57,12 +57,12 @@ class LoadBalancer extends OperatorResource implements Creatable, Updateable, Li
     public $connectionLogging;
 
     /**
-     * @var array
+     * @var []VirtualIp
      */
     public $virtualIps;
 
     /**
-     * @var array
+     * @var []Node
      */
     public $nodes;
 
@@ -96,16 +96,33 @@ class LoadBalancer extends OperatorResource implements Creatable, Updateable, Li
      */
     public $sourceAddresses;
 
-    protected $resourceKey = 'loadBalancer';
+    /** @var int */
+    public $nodeCount;
 
+    protected $resourceKey = 'loadBalancer';
     protected $resourcesKey = 'loadBalancers';
+
+    public function populateFromArray(array $array): self
+    {
+        parent::populateFromArray($array);
+
+        if (isset($array['created'])) {
+            $this->created = new \DateTimeImmutable($array['created']['time']);
+        }
+
+        if (isset($array['updated'])) {
+            $this->updated = new \DateTimeImmutable($array['updated']['time']);
+        }
+
+        return $this;
+    }
 
     /**
      * {@inheritDoc}
      */
     public function create(array $userOptions): Creatable
     {
-        $response = $this->execute($this->api->postLoadBalancer(), $userOptions);
+        $response = $this->execute($this->api->postLoadbalancers(), $userOptions);
         return $this->populateFromResponse($response);
     }
 

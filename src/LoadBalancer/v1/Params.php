@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Rackspace\LoadBalancer\v1;
 
@@ -201,7 +201,7 @@ class Params extends AbstractParams
         return [
             'type'        => self::ARRAY_TYPE,
             'location'    => self::JSON,
-            'items'  => [
+            'items'       => [
                 'type'       => self::OBJECT_TYPE,
                 'location'   => self::JSON,
                 'properties' => [
@@ -268,7 +268,7 @@ class Params extends AbstractParams
     public function timeoutJson()
     {
         return [
-            'type'        => self::STRING_TYPE,
+            'type'        => self::INT_TYPE,
             'required'    => false,
             'location'    => self::JSON,
             'description' => 'The timeout value for the load balancer and communications with its nodes. Defaults to 30 seconds with a maximum of 120 seconds.',
@@ -288,6 +288,18 @@ class Params extends AbstractParams
         ];
     }
 
+    public function idsQuery()
+    {
+        return [
+            'type'     => self::ARRAY_TYPE,
+            'location' => self::QUERY,
+            'items'    => [
+                'type'     => self::STRING_TYPE,
+                'location' => self::QUERY,
+            ],
+        ];
+    }
+
     /**
      * Returns information about virtualIps parameter
      *
@@ -298,11 +310,11 @@ class Params extends AbstractParams
         return [
             'type'        => self::ARRAY_TYPE,
             'location'    => self::JSON,
-            'items'  => [
+            'items'       => [
                 'type'       => self::OBJECT_TYPE,
                 'location'   => self::JSON,
                 'properties' => [
-                    'id' => $this->idJson(),
+                    'type' => $this->typeJson(),
                 ],
             ],
             'required'    => false,
